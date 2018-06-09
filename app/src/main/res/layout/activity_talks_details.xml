@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/talks_details_appbar_height"
+            app:contentScrim="@color/primary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/iv_talks_backdrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ronaldo_talks_details_img" />
+
+            <ImageButton
+                android:id="@+id/ib_back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_arrow_back_white_24dp" />
+
+            <ImageButton
+                android:id="@+id/btn_more_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_more_vert_white_24dp" />
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_medium_2"
+            android:layout_marginRight="@dimen/margin_medium_2">
+
+            <TextView
+                android:id="@+id/tv_talker_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="Cristiano Ronaldo"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/text_regular" />
+
+            <TextView
+                android:id="@+id/tv_talks_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_talker_name"
+                android:text="Real Madrid star wants Champions League to rename"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/text_heading_1x" />
+
+            <TextView
+                android:id="@+id/tv_talks_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_talks_title"
+                android:text="12:24   | " />
+
+            <Button
+                android:id="@+id/btn_listen"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/margin_medium_3"
+                android:layout_alignTop="@id/tv_talks_time"
+                android:layout_toRightOf="@id/tv_talks_time"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:drawableLeft="@drawable/ic_volume_up_black_16dp"
+                android:drawablePadding="@dimen/margin_medium_3_n"
+                android:foreground="@drawable/ripple"
+                android:paddingLeft="@dimen/margin_medium"
+                android:text="Listen"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary_text" />
+
+            <ImageButton
+                android:id="@+id/btn_add_playlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_talks_time"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_playlist_add_black_24dp"
+
+                />
+
+            <ImageButton
+                android:id="@+id/btn_favourite_talks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/btn_add_playlist"
+                android:layout_marginLeft="@dimen/margin_medium_3"
+                android:layout_toRightOf="@id/btn_add_playlist"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_favorite_border_black_24dp"
+
+                />
+
+            <ImageButton
+                android:id="@+id/btn_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/btn_favourite_talks"
+                android:layout_marginLeft="@dimen/margin_medium_3"
+                android:layout_toRightOf="@id/btn_favourite_talks"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_file_download_black_24dp" />
+
+            <ImageButton
+                android:id="@+id/btn_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/btn_download"
+                android:layout_marginLeft="@dimen/margin_medium_3"
+                android:layout_toRightOf="@id/btn_download"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_share_black_24dp" />
+
+            <TextView
+                android:id="@+id/tv_talks_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_add_playlist"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="Ronaldo did not score but had an game and finished the tournament as the top scorer, with 15 goals – five more than joint second place Liverpool stars Mohamed Salah and Roberto Firmino.					"
+                android:textColor="@color/primary_text" />
+
+            <View
+                android:id="@+id/v_line_separator_one"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/tv_talks_details"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:background="@color/secondary_text" />
+
+            <TextView
+                android:id="@+id/tv_ted_support_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/v_line_separator_one"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="TED talks are free thanks to support from"
+                android:textSize="@dimen/text_smaller" />
+
+            <View
+                android:id="@+id/v_square_block"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/tv_ted_support_msg"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@color/secondary_text" />
+
+            <View
+                android:id="@+id/v_line_separator_two"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/v_square_block"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:background="@color/secondary_text" />
+
+            <TextView
+                android:id="@+id/tv_about_speaker_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/v_line_separator_two"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="About the speaker"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/text_regular_3x" />
+
+            <ImageView
+                android:id="@+id/iv_about_speaker_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/tv_about_speaker_title"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:src="@drawable/cycle_ronaldo_img_"
+                android:background="@android:color/transparent"
+                />
+
+            <TextView
+                android:id="@+id/tv_about_speaker_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/iv_about_speaker_img"
+                android:layout_below="@id/tv_about_speaker_title"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_toRightOf="@id/iv_about_speaker_img"
+                android:text="Cristiano Ronaldo"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/text_regular_2x"
+                />
+
+            <TextView
+                android:id="@+id/tv_about_speaker_job"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_about_speaker_name"
+                android:layout_below="@id/tv_about_speaker_name"
+                android:text="Football Player"
+                android:textColor="@color/secondary_text" />
+
+            <TextView
+                android:id="@+id/tv_speaker_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_about_speaker_job"
+                android:layout_below="@id/tv_about_speaker_job"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="Cristiano Ronaldo: In my mind, I'm always the best. I don't care what people think"
+                android:textColor="@color/primary_text" />
+
+            <View
+                android:id="@+id/v_line_separator_three"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/tv_speaker_desc"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:background="@color/secondary_text" />
+
+            <TextView
+                android:id="@+id/tv_watch_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/v_line_separator_three"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="Watch next"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/text_regular_3x" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_next_talks_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/tv_watch_next" />
+
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_play_talks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_medium_2"
+        android:backgroundTint="@color/primary"
+        android:src="@drawable/ic_play_arrow_white_24dp"
+        app:layout_anchor="@id/appbar"
+        app:layout_anchorGravity="right|bottom" />
+
+</android.support.design.widget.CoordinatorLayout>

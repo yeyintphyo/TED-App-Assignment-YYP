@@ -10,17 +10,17 @@ import com.padcmyanmar.ted_app_assignment_yyp.R;
 import com.padcmyanmar.ted_app_assignment_yyp.delegates.TalksDelegate;
 import com.padcmyanmar.ted_app_assignment_yyp.viewholders.TalksViewHolder;
 
-public class TalksAdapter extends RecyclerView.Adapter {
+public class TalksDetailsAdapter extends RecyclerView.Adapter {
     private TalksDelegate mtalTalksDelegate;
 
-    public TalksAdapter(TalksDelegate talksDelegate) {
+    public TalksDetailsAdapter(TalksDelegate talksDelegate) {
         mtalTalksDelegate = talksDelegate;
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.view_holder_talks, parent, false);
+        View view = layoutInflater.inflate(R.layout.view_holder_talks_details, parent, false);
         return new TalksViewHolder(view, mtalTalksDelegate);
     }
 
