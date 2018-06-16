@@ -33,5 +33,11 @@
     <dimen name="text_big_2x">60sp</dimen>
     <dimen name="text_big_3x">80sp</dimen>
 
+    <!-- talks list -->
+    <dimen name="talks_list_img_height">250dp</dimen>
+
+    <!-- talks details -->
     <dimen name="talks_details_appbar_height">200dp</dimen>
+    <dimen name="next_talks_img_width">120dp</dimen>
+    <dimen name="next_talks_img_height">70dp</dimen>
 </resources>

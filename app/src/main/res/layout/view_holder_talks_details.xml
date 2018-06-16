@@ -6,8 +6,8 @@
 
     <ImageView
         android:id="@+id/iv_talk_img"
-        android:layout_width="120dp"
-        android:layout_height="70dp"
+        android:layout_width="@dimen/next_talks_img_width"
+        android:layout_height="@dimen/next_talks_img_height"
         android:src="@drawable/champions_img"
         android:layout_marginTop="@dimen/margin_medium_3"
         android:scaleType="centerCrop"

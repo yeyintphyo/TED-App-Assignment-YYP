@@ -15,7 +15,7 @@
             android:layout_height="?attr/actionBarSize"
             app:title="TED Talks"
             app:titleTextColor="@color/primary"
-            android:background="#FFFFFF"
+            android:background="@color/white_background"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             />
 

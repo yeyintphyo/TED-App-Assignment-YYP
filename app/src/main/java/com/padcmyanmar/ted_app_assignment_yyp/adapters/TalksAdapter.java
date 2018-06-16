@@ -11,21 +11,21 @@ import com.padcmyanmar.ted_app_assignment_yyp.delegates.TalksDelegate;
 import com.padcmyanmar.ted_app_assignment_yyp.viewholders.TalksViewHolder;
 
 public class TalksAdapter extends RecyclerView.Adapter {
-    private TalksDelegate mtalTalksDelegate;
+    private TalksDelegate mTalksDelegate;
 
     public TalksAdapter(TalksDelegate talksDelegate) {
-        mtalTalksDelegate = talksDelegate;
+        mTalksDelegate = talksDelegate;
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.view_holder_talks, parent, false);
-        return new TalksViewHolder(view, mtalTalksDelegate);
+        return new TalksViewHolder(view, mTalksDelegate);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
     }
 

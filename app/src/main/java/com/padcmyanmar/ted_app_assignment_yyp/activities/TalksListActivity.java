@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.padcmyanmar.ted_app_assignment_yyp.R;
 import com.padcmyanmar.ted_app_assignment_yyp.adapters.TalksAdapter;
+import com.padcmyanmar.ted_app_assignment_yyp.data.models.TalksModel;
 import com.padcmyanmar.ted_app_assignment_yyp.delegates.TalksDelegate;
 
 public class TalksListActivity extends BaseActivity implements TalksDelegate{
@@ -26,6 +27,7 @@ public class TalksListActivity extends BaseActivity implements TalksDelegate{
         rvTalks.setAdapter(talksAdapter);
         rvTalks.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
 
+        TalksModel.getObjInstance().loadTalksList();
     }
 
     @Override
