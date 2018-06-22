@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import com.padcmyanmar.ted_app_assignment_yyp.R;
 import com.padcmyanmar.ted_app_assignment_yyp.adapters.TalksAdapter;
 import com.padcmyanmar.ted_app_assignment_yyp.adapters.TalksDetailsAdapter;
+import com.padcmyanmar.ted_app_assignment_yyp.data.vos.TedTalksVO;
 import com.padcmyanmar.ted_app_assignment_yyp.delegates.TalksDelegate;
 
 public class TalksDetailActivity extends BaseActivity implements TalksDelegate {
@@ -25,7 +26,7 @@ public class TalksDetailActivity extends BaseActivity implements TalksDelegate {
     }
 
     @Override
-    public void onTagTalks() {
+    public void onTagTalks(TedTalksVO talksVO) {
 
     }
 }

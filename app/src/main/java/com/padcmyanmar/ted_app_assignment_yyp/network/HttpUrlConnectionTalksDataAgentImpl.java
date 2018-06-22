@@ -3,10 +3,15 @@ package com.padcmyanmar.ted_app_assignment_yyp.network;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.google.gson.Gson;
+import com.padcmyanmar.ted_app_assignment_yyp.events.ApiErrorEvent;
+import com.padcmyanmar.ted_app_assignment_yyp.events.SuccessGetTalksEvent;
+import com.padcmyanmar.ted_app_assignment_yyp.network.response.GetTalksResponse;
 import com.padcmyanmar.ted_app_assignment_yyp.utils.TalksConstants;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.greenrobot.eventbus.EventBus;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -107,8 +112,19 @@ public class HttpUrlConnectionTalksDataAgentImpl implements TalksDataAgent {
             }
 
             @Override
-            protected void onPostExecute(String s) {
-                super.onPostExecute(s);
+            protected void onPostExecute(String responseString) {
+                super.onPostExecute(responseString);
+                Gson gson = new Gson();
+                GetTalksResponse talksResponse = gson.fromJson(responseString, GetTalksResponse.class);
+                Log.d("onPostExcute", "Talks List Size" + talksResponse.getTedTalks().size());
+
+                if (talksResponse.isResponseOK()){
+                    SuccessGetTalksEvent event = new SuccessGetTalksEvent(talksResponse.getTedTalks());
+                    EventBus.getDefault().post(event);
+                } else {
+                    ApiErrorEvent event = new ApiErrorEvent(talksResponse.getMessage());
+                    EventBus.getDefault().post(event);
+                }
             }
         }.execute();
 
