@@ -4,11 +4,11 @@ import com.google.gson.annotations.SerializedName;
 
 public class SegmentsVO {
 
-    @SerializedName("speaker_id")
+    @SerializedName("segment_id")
     private String segmentId;
-    @SerializedName("speaker_id")
+    @SerializedName("title")
     private String title;
-    @SerializedName("speaker_id")
+    @SerializedName("imageUrl")
     private String imageUrl;
 
     public String getSegmentId() {

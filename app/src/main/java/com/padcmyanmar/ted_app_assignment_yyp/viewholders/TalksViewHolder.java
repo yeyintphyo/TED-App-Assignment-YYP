@@ -56,8 +56,11 @@ public class TalksViewHolder extends RecyclerView.ViewHolder {
             ivTalkImg.setVisibility(View.GONE);
         }
 
-        tvName.setText(tedTalk.getSpeaker().getName());
-        tvDescription.setText(tedTalk.getDescription());
+        if (tedTalk.getSpeaker() != null) {
+            tvName.setText(tedTalk.getSpeaker().getName());
+        }
+
+        tvDescription.setText(tedTalk.getTitle());
         tvPostTime.setText(tedTalk.getDurationInSec());
     }
 }

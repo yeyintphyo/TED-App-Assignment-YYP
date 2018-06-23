@@ -6,17 +6,17 @@ import java.util.List;
 
 public class TedPlaylistsVO {
 
-    @SerializedName("speaker_id")
+    @SerializedName("playlist_id")
     private String playlistId;
-    @SerializedName("speaker_id")
+    @SerializedName("title")
     private String title;
-    @SerializedName("speaker_id")
+    @SerializedName("imageUrl")
     private String imageUrl;
-    @SerializedName("speaker_id")
+    @SerializedName("totalTalks")
     private String totalTalks;
-    @SerializedName("speaker_id")
+    @SerializedName("description")
     private String description;
-    @SerializedName("speaker_id")
+    @SerializedName("talksInPlaylist")
     private List<TedTalksVO> talksInPlaylist;
 
     public String getPlaylistId() {

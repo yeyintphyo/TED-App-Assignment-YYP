@@ -4,17 +4,17 @@ import com.google.gson.annotations.SerializedName;
 
 public class ResultsVO {
 
-    @SerializedName("speaker_id")
+    @SerializedName("search_result_id")
     private String searchResultId;
-    @SerializedName("speaker_id")
+    @SerializedName("title")
     private String title;
-    @SerializedName("speaker_id")
+    @SerializedName("description")
     private String description;
-    @SerializedName("speaker_id")
+    @SerializedName("imageUrl")
     private String imageUrl;
-    @SerializedName("speaker_id")
+    @SerializedName("result_type")
     private String resultType;
-    @SerializedName("speaker_id")
+    @SerializedName("result_id")
     private String resultId;
 
     public String getSearchResultId() {

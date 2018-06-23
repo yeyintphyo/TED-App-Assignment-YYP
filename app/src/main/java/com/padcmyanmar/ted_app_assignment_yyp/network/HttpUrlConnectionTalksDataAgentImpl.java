@@ -53,7 +53,7 @@ public class HttpUrlConnectionTalksDataAgentImpl implements TalksDataAgent {
                 try {
                     // create the HttpURLConnection
                     //http://www.aungpyaephyo.xyz/myanmar_attractions/getAttractionsList.php
-                    url = new URL(TalksConstants.API_BASE_URL + TalksConstants.API_GET_NEWS); //1.
+                    url = new URL(TalksConstants.API_BASE_URL + TalksConstants.API_GET_TALKS); //1.
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection(); //2.
 
                     // just want to do an HTTP POST here
@@ -116,7 +116,7 @@ public class HttpUrlConnectionTalksDataAgentImpl implements TalksDataAgent {
                 super.onPostExecute(responseString);
                 Gson gson = new Gson();
                 GetTalksResponse talksResponse = gson.fromJson(responseString, GetTalksResponse.class);
-                Log.d("onPostExcute", "Talks List Size" + talksResponse.getTedTalks().size());
+                Log.d("onPostExecute", "Talks List Size" + talksResponse.getTedTalks().size());
 
                 if (talksResponse.isResponseOK()){
                     SuccessGetTalksEvent event = new SuccessGetTalksEvent(talksResponse.getTedTalks());

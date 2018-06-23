@@ -16,13 +16,13 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RetrofitTalksDataAgent implements TalksDataAgent {
+public class RetrofitTalksDataAgentImpl implements TalksDataAgent {
 
-    private static RetrofitTalksDataAgent sObjInstance;
+    private static RetrofitTalksDataAgentImpl sObjInstance;
 
     private TalksApi mTheApi;
 
-    private RetrofitTalksDataAgent() {
+    private RetrofitTalksDataAgentImpl() {
         final OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .connectTimeout(15, TimeUnit.SECONDS)
                 .writeTimeout(15, TimeUnit.SECONDS)
@@ -38,9 +38,9 @@ public class RetrofitTalksDataAgent implements TalksDataAgent {
         mTheApi = retrofit.create(TalksApi.class);
     }
 
-    public static RetrofitTalksDataAgent getInstance() {
+    public static RetrofitTalksDataAgentImpl getInstance() {
         if (sObjInstance == null) {
-            sObjInstance = new RetrofitTalksDataAgent();
+            sObjInstance = new RetrofitTalksDataAgentImpl();
         }
         return sObjInstance;
     }

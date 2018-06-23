@@ -7,30 +7,42 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.padcmyanmar.ted_app_assignment_yyp.R;
+import com.padcmyanmar.ted_app_assignment_yyp.data.vos.TedTalksVO;
 import com.padcmyanmar.ted_app_assignment_yyp.delegates.TalksDelegate;
+import com.padcmyanmar.ted_app_assignment_yyp.viewholders.TalksDetailsViewHolder;
 import com.padcmyanmar.ted_app_assignment_yyp.viewholders.TalksViewHolder;
 
-public class TalksDetailsAdapter extends RecyclerView.Adapter {
-    private TalksDelegate mtalTalksDelegate;
+import java.util.ArrayList;
+import java.util.List;
+
+public class TalksDetailsAdapter extends RecyclerView.Adapter<TalksDetailsViewHolder> {
+    private TalksDelegate mTalksDelegate;
+    private List<TedTalksVO> talksList;
 
     public TalksDetailsAdapter(TalksDelegate talksDelegate) {
-        mtalTalksDelegate = talksDelegate;
+        mTalksDelegate = talksDelegate;
+        talksList = new ArrayList<>();
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TalksDetailsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.view_holder_talks_details, parent, false);
-        return new TalksViewHolder(view, mtalTalksDelegate);
+        return new TalksDetailsViewHolder(view, mTalksDelegate);
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
+    public void onBindViewHolder(@NonNull TalksDetailsViewHolder holder, int position) {
+        holder.setTalksData(talksList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return 3;
+        return talksList.size();
+    }
+
+    public void setTalksList(List<TedTalksVO> talksList) {
+        this.talksList = talksList;
+        notifyDataSetChanged();
     }
 }

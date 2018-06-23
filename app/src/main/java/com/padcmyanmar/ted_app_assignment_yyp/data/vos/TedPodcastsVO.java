@@ -6,15 +6,15 @@ import java.util.List;
 
 public class TedPodcastsVO {
 
-    @SerializedName("speaker_id")
+    @SerializedName("podcast_id")
     private String podcastId;
-    @SerializedName("speaker_id")
+    @SerializedName("title")
     private String title;
-    @SerializedName("speaker_id")
+    @SerializedName("imageUrl")
     private String imageUrl;
-    @SerializedName("speaker_id")
+    @SerializedName("description")
     private String description;
-    @SerializedName("speaker_id")
+    @SerializedName("segments")
     private List<SegmentsVO> segments;
 
     public String getPodcastId() {
